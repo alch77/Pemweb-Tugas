@@ -1,0 +1,313 @@
+:root {
+  --biru: #0b57f0;
+  --biru-tua: #0a47c4;
+  --merah: #d92d2d;
+  --teks: #0f1b3d;
+  --teks-redup: #5b6580;
+  --garis: #d5dae6;
+  --latar: #f4f6fb;
+  --kartu: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: var(--teks);
+  background: var(--latar);
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.app {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.header p {
+  margin: 4px 0 0;
+  color: var(--teks-redup);
+}
+
+/* Tombol */
+.btn {
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+
+.btn-utama {
+  background: var(--biru);
+  color: #fff;
+}
+
+.btn-utama:hover {
+  background: var(--biru-tua);
+}
+
+.btn-garis {
+  background: #fff;
+  color: var(--biru);
+  border-color: var(--biru);
+}
+
+.btn-bahaya-garis {
+  background: #fff;
+  color: var(--merah);
+  border-color: var(--merah);
+}
+
+.btn-bahaya {
+  background: var(--merah);
+  color: #fff;
+}
+
+.btn-kecil {
+  padding: 6px 10px;
+  font-size: 12px;
+  flex: 1;
+}
+
+/* Daftar produk */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.kartu {
+  background: var(--kartu);
+  border: 1px solid var(--garis);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(15, 27, 61, 0.08);
+}
+
+.kartu-id {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--teks-redup);
+}
+
+.kartu-nama {
+  margin: 8px 0 4px;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.kartu-harga {
+  margin: 0 0 16px;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--biru);
+}
+
+.kartu-aksi {
+  display: flex;
+  gap: 8px;
+}
+
+/* Pencarian */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.cari {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 1 360px;
+  background: #fff;
+  border: 1px solid var(--garis);
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: var(--teks-redup);
+}
+
+.cari input {
+  flex: 1;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: var(--teks);
+  background: transparent;
+}
+
+.jumlah,
+.footer-info {
+  font-size: 12px;
+  color: var(--teks-redup);
+}
+
+.footer-info {
+  margin-top: 24px;
+}
+
+.kosong {
+  margin-top: 32px;
+  text-align: center;
+  color: var(--teks-redup);
+}
+
+/* Modal */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 27, 61, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 10;
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 12px 32px rgba(15, 27, 61, 0.25);
+}
+
+.modal-tutup {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  border: 0;
+  background: transparent;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--teks-redup);
+}
+
+.modal-judul {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.modal-sub {
+  margin: 4px 0 16px;
+  font-size: 13px;
+  color: var(--teks-redup);
+}
+
+.field {
+  display: block;
+  margin-bottom: 14px;
+}
+
+.field > span {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.field input {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid var(--garis);
+  border-radius: 8px;
+  font: inherit;
+  color: var(--teks);
+}
+
+.field input:focus {
+  outline: 2px solid var(--biru);
+  outline-offset: -1px;
+}
+
+.field small {
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
+}
+
+.petunjuk {
+  color: var(--teks-redup);
+}
+
+.galat {
+  color: var(--merah);
+}
+
+.modal-aksi {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.modal-aksi .btn {
+  flex: 1;
+}
+
+.modal-id {
+  margin: -8px 0 12px;
+  font-size: 12px;
+  color: var(--teks-redup);
+}
+
+/* Konfirmasi hapus */
+.tengah {
+  text-align: center;
+}
+
+.hapus-ikon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin: 8px auto 12px;
+  border-radius: 10px;
+  background: #fde8e8;
+  color: var(--merah);
+}
+
+.hapus-ringkas {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px;
+  border: 1px solid var(--garis);
+  border-radius: 8px;
+}
+
+.hapus-ringkas strong {
+  font-size: 18px;
+}
+
+.hapus-ringkas .kartu-harga {
+  margin: 0;
+  font-size: 16px;
+}
